@@ -171,8 +171,8 @@ fn init_scene(fb: &mut Framebuffer) {
 }
 
 fn main() {
-    let window_width = 800;
-    let window_height = 800;
+    let window_width = 400;
+    let window_height = 400;
     let framebuffer_width = 100;
     let framebuffer_height = 100;
 
