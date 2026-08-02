@@ -5,7 +5,7 @@ Implementación del clásico algoritmo celular inventado por el matemático John
 ## Demostración
 
 ![Game of Life Gameplay](game_of_life.gif)
-*(Asegúrate de colocar tu archivo GIF en esta misma carpeta y llamarlo `game_of_life.gif`, o actualiza el nombre en este README).*
+
 
 ## Características del Proyecto
 
