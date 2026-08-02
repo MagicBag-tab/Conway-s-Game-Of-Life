@@ -167,6 +167,55 @@ fn init_scene(fb: &mut Framebuffer) {
         " ***            ***"
     ]);
 
+    // --- NUEVOS ORGANISMOS DE LA IMAGEN ---
+
+    // 14. Bee-hive (Still life)
+    place_pattern(fb, 2, 8, &[
+        " ** ",
+        "*  *",
+        " ** "
+    ]);
+
+    // 15. Loaf (Still life)
+    place_pattern(fb, 10, 8, &[
+        " ** ",
+        "*  *",
+        " * *",
+        "  * "
+    ]);
+
+    // 16. Boat (Still life)
+    place_pattern(fb, 18, 8, &[
+        "** ",
+        "* *",
+        " * "
+    ]);
+
+    // 17. Tub (Still life)
+    place_pattern(fb, 26, 8, &[
+        " * ",
+        "* *",
+        " * "
+    ]);
+
+    // 18. MWSS - Middle-weight spaceship (Spaceship)
+    place_pattern(fb, 5, 35, &[
+        "  *** ",
+        "*    *",
+        "     *",
+        "*   * ",
+        " *    "
+    ]);
+
+    // 19. HWSS - Heavy-weight spaceship (Spaceship)
+    place_pattern(fb, 20, 35, &[
+        "  **** ",
+        "*     *",
+        "      *",
+        "*    * ",
+        " *     "
+    ]);
+
     // 11. Fleet de Gliders
     for i in 0..5 {
         place_pattern(fb, 20 + i * 5, 60, &[
