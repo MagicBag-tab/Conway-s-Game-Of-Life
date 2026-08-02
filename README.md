@@ -15,13 +15,15 @@ Implementación del clásico algoritmo celular inventado por el matemático John
 
 ## Organismos y Patrones Incluidos
 
-El simulador se carga inicialmente con más de 10 patrones clásicos y avanzados para máxima entropía:
-1. **True Puffer Train:** (Gosper's Puffer 1) Una colosal estructura móvil que avanza dejando atrás humo y escombros.
-2. **Glider Fleet:** Un escuadrón sincronizado de naves (Spaceships).
-3. **Osciladores:** Pulsar, Penta-decathlon, Toad, Beacon y Blinker.
-4. **Gosper Glider Gun:** Un arma que dispara Gliders infinitamente.
-5. **Still Lifes:** Bloques estáticos.
-6. **Sopa Primordial:** Un cuadrante entero inicializado aleatoriamente al principio de la simulación.
+El simulador se carga inicialmente con una colección extensa de patrones que abarcan todas las familias clásicas del juego, además de algunas estructuras avanzadas generadoras de caos:
+
+1. **Still lifes (Vidas estáticas):** Block, Bee-hive, Loaf, Boat y Tub.
+2. **Oscillators (Osciladores):** Blinker, Toad, Beacon, Pulsar y Penta-decathlon.
+3. **Spaceships (Naves espaciales):** Glider, Lightweight spaceship (LWSS), Middle-weight spaceship (MWSS) y Heavy-weight spaceship (HWSS).
+4. **Armas y Trenes Avanzados:**
+   - *Gosper Glider Gun:* Un arma infinita descubierta por Bill Gosper que dispara Gliders periódicamente.
+   - *True Puffer Train:* (Gosper's Puffer 1) Una colosal estructura móvil que avanza dejando atrás humo y escombros de forma infinita.
+   - *Glider Fleet:* Un escuadrón sincronizado de naves (Spaceships).
 
 ## Cómo Ejecutar
 

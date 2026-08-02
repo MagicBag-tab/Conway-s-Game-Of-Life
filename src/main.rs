@@ -242,18 +242,6 @@ fn init_scene(fb: &mut Framebuffer) {
         "  ***   ***  "
     ]);
 
-    // 13. Sopa primordial (Ruido aleatorio) en el cuadrante inferior
-    // Usamos un generador pseudoaleatorio simple (LCG)
-    let mut seed: u32 = 42;
-    fb.set_current_color(ALIVE_COLOR);
-    for y in 80..115 {
-        for x in 10..150 {
-            seed = seed.wrapping_mul(1664525).wrapping_add(1013904223);
-            if seed % 3 == 0 { // 33% de probabilidad de estar viva
-                fb.point(x, y);
-            }
-        }
-    }
 }
 
 fn main() {
