@@ -4,14 +4,12 @@ use std::time::Duration;
 use std::thread;
 
 mod framebuffer;
-mod line;
-mod polygon;
 
 use crate::framebuffer::Framebuffer;
 
 // Colores del juego
-const ALIVE_COLOR: u32 = 0x5EADFF;
-const DEAD_COLOR: u32 = 0x909C6E;
+const ALIVE_COLOR: u32 = 0x66BAFF;
+const DEAD_COLOR: u32 = 0xFFD1FB;
 
 fn place_pattern(fb: &mut Framebuffer, start_x: usize, start_y: usize, pattern: &[&str]) {
     fb.set_current_color(ALIVE_COLOR);
@@ -160,21 +158,60 @@ fn init_scene(fb: &mut Framebuffer) {
         "............**"
     ]);
 
-    // 10. Puffer train (dirty puffer)
-    place_pattern(fb, 75, 40, &[
-        "   * ",
-        " *   *",
-        "*    ",
-        "*   **",
-        "**** "
+    // 10. True Puffer Train (Gosper's Puffer 1)
+    place_pattern(fb, 40, 70, &[
+        "  *    *      * * ",
+        "   *    *  *     *",
+        "   *    ***      *",
+        "*  *          *  *",
+        " ***            ***"
     ]);
+
+    // 11. Fleet de Gliders
+    for i in 0..5 {
+        place_pattern(fb, 20 + i * 5, 60, &[
+            " * ",
+            "  *",
+            "***"
+        ]);
+    }
+
+    // 12. Más osciladores dispersos
+    place_pattern(fb, 80, 10, &[
+        "  ***   ***  ",
+        "             ",
+        "*    * *    *",
+        "*    * *    *",
+        "*    * *    *",
+        "  ***   ***  ",
+        "             ",
+        "  ***   ***  ",
+        "*    * *    *",
+        "*    * *    *",
+        "*    * *    *",
+        "             ",
+        "  ***   ***  "
+    ]);
+
+    // 13. Sopa primordial (Ruido aleatorio) en el cuadrante inferior
+    // Usamos un generador pseudoaleatorio simple (LCG)
+    let mut seed: u32 = 42;
+    fb.set_current_color(ALIVE_COLOR);
+    for y in 80..115 {
+        for x in 10..150 {
+            seed = seed.wrapping_mul(1664525).wrapping_add(1013904223);
+            if seed % 3 == 0 { // 33% de probabilidad de estar viva
+                fb.point(x, y);
+            }
+        }
+    }
 }
 
 fn main() {
-    let window_width = 400;
-    let window_height = 400;
-    let framebuffer_width = 100;
-    let framebuffer_height = 100;
+    let window_width = 800;
+    let window_height = 600;
+    let framebuffer_width = 160;
+    let framebuffer_height = 120;
 
     let mut framebuffer = Framebuffer::new(framebuffer_width, framebuffer_height);
 
